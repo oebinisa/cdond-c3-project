@@ -27,7 +27,7 @@
     name: pm2
     global: yes
     production: yes
-    state: present
+    state: latest
 
 - name: Create Backend App Directory
   file:
@@ -47,5 +47,5 @@
     tar xzvf artifact.tar.gz
     npm install
     npm run build
-    pm2 stop default
+    pm2 stop all
     pm2 start npm -- start
