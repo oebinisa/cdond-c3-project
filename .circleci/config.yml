@@ -313,6 +313,8 @@ jobs:
           name: Install dependencies
           command: |
             apk add --update --no-cache ansible tar gzip nodejs npm curl aws-cli
+      - restore_cache:
+          keys: [backend-build]
       - run:
           name: Deploy backend
           command: |
@@ -378,12 +380,12 @@ jobs:
             echo "Sleeping for 1 minute"
             sleep 60
 
-            # if curl "${API_URL}/api/status" | grep "ok"
-            # then
-            #   return 0
-            # else
-            #   return 1
-            # fi
+            if curl "${API_URL}/api/status" | grep "ok"
+            then
+              return 0
+            else
+              return 1
+            fi
 
       - run:
           name: Frontend smoke test.
