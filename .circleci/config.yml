@@ -219,6 +219,7 @@ jobs:
             echo TYPEORM_DATABASE=$TYPEORM_DATABASE >> ".env"
             cat .env
             pwd
+            cd ..
             cd .circleci/ansible
             ls -al
             ansible-playbook -i inventory.txt configure-server.yml
