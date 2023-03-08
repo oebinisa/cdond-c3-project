@@ -203,21 +203,21 @@ jobs:
       - run:
           name: Configure server
           command: |
-            # add environment variables to server
-            pwd
-            cd backend
-            echo ENVIRONMENT=production > ".env"
-            echo TYPEORM_CONNECTION=$TYPEORM_CONNECTION >> ".env"
-            echo TYPEORM_ENTITIES=$TYPEORM_ENTITIES >> ".env"
-            echo TYPEORM_MIGRATIONS=$TYPEORM_MIGRATIONS >> ".env"
-            echo TYPEORM_MIGRATIONS_DIR=$TYPEORM_MIGRATIONS_DIR >> ".env"
-            echo NODE_ENV=production >> ".env"
-            echo TYPEORM_HOST=$TYPEORM_HOST >> ".env"
-            echo TYPEORM_PORT=$TYPEORM_PORT >> ".env"
-            echo TYPEORM_USERNAME=$TYPEORM_USERNAME >> ".env"
-            echo TYPEORM_PASSWORD=$TYPEORM_PASSWORD >> ".env"
-            echo TYPEORM_DATABASE=$TYPEORM_DATABASE >> ".env"
-            cat .env
+            # # add environment variables to server
+            # pwd
+            # cd backend
+            # echo ENVIRONMENT=production > ".env"
+            # echo TYPEORM_CONNECTION=$TYPEORM_CONNECTION >> ".env"
+            # echo TYPEORM_ENTITIES=$TYPEORM_ENTITIES >> ".env"
+            # echo TYPEORM_MIGRATIONS=$TYPEORM_MIGRATIONS >> ".env"
+            # echo TYPEORM_MIGRATIONS_DIR=$TYPEORM_MIGRATIONS_DIR >> ".env"
+            # echo NODE_ENV=production >> ".env"
+            # echo TYPEORM_HOST=$TYPEORM_HOST >> ".env"
+            # echo TYPEORM_PORT=$TYPEORM_PORT >> ".env"
+            # echo TYPEORM_USERNAME=$TYPEORM_USERNAME >> ".env"
+            # echo TYPEORM_PASSWORD=$TYPEORM_PASSWORD >> ".env"
+            # echo TYPEORM_DATABASE=$TYPEORM_DATABASE >> ".env"
+            # cat .env
             pwd
             cd ..
             cd .circleci/ansible
@@ -338,23 +338,23 @@ jobs:
       - run:
           name: Deploy backend
           command: |
+            # add environment variables to server
             pwd
             cd backend
-
-            # touch .env
-            # echo ENVIRONMENT=production > ".env"
-            # echo TYPEORM_CONNECTION=POSTGRE >> ".env"
-            # echo TYPEORM_ENTITIES=./src/modules/domain/**/*.entity.ts >> ".env"
-            # echo TYPEORM_MIGRATIONS=./src/migrations/*.ts >> ".env"
-            # echo TYPEORM_MIGRATIONS_DIR=./src/migrations >> ".env"
-            # echo NODE_ENV=production >> ".env"
-            # echo TYPEORM_HOST=$TYPEORM_HOST >> ".env"
-            # echo TYPEORM_PORT=$TYPEORM_PORT >> ".env"
-            # echo TYPEORM_USERNAME=$TYPEORM_USERNAME >> ".env"
-            # echo TYPEORM_PASSWORD=$TYPEORM_PASSWORD >> ".env"
-            # echo TYPEORM_DATABASE=$TYPEORM_DATABASE >> ".env"
             
-            # cat .env
+            echo ENVIRONMENT=production > ".env"
+            echo TYPEORM_CONNECTION=$TYPEORM_CONNECTION >> ".env"
+            echo TYPEORM_ENTITIES=$TYPEORM_ENTITIES >> ".env"
+            echo TYPEORM_MIGRATIONS=$TYPEORM_MIGRATIONS >> ".env"
+            echo TYPEORM_MIGRATIONS_DIR=$TYPEORM_MIGRATIONS_DIR >> ".env"
+            echo NODE_ENV=production >> ".env"
+            echo TYPEORM_HOST=$TYPEORM_HOST >> ".env"
+            echo TYPEORM_PORT=$TYPEORM_PORT >> ".env"
+            echo TYPEORM_USERNAME=$TYPEORM_USERNAME >> ".env"
+            echo TYPEORM_PASSWORD=$TYPEORM_PASSWORD >> ".env"
+            echo TYPEORM_DATABASE=$TYPEORM_DATABASE >> ".env"
+            cat .env
+
             pwd
             ls -al
             npm install
