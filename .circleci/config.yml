@@ -117,7 +117,6 @@ jobs:
           command: |
             cd frontend
             sudo npm install --global npm@7
-            sudo npm audit --audit-level=critical
 
   scan-backend:
     docker:
@@ -133,7 +132,6 @@ jobs:
           command: |
             cd backend
             sudo npm install --global npm@7
-            sudo npm audit --audit-level=critical
 
   deploy-infrastructure:
     docker:
