@@ -123,7 +123,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      # Checkout code from git.
+      # Checkout code from git
       - checkout
       # Restore from cache
       - restore_cache:
@@ -137,7 +137,7 @@ jobs:
 
   deploy-infrastructure:
     docker:
-      # Docker image here that supports AWS CLI.
+      # Docker image here that supports AWS CLI
       - image: amazon/aws-cli
     steps:
       # Checkout code from git
