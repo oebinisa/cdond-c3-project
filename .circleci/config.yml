@@ -83,7 +83,7 @@ jobs:
           name: Run frontend test
           command: |
             cd frontend
-            npm install
+            sudo npm install --global npm@7
             npm run test
 
   test-backend:
@@ -100,8 +100,8 @@ jobs:
           name: Run backend test
           command: |
             cd backend
-            npm install
-            npm run test
+            sudo npm install --global npm@7
+            sudo npm run test
 
   scan-frontend:
     docker:
@@ -116,8 +116,8 @@ jobs:
           name: Scan Frontend
           command: |
             cd frontend
-            npm install
-            npm audit --audit-level=critical
+            sudo npm install --global npm@7
+            sudo npm audit --audit-level=critical
 
   scan-backend:
     docker:
@@ -132,8 +132,8 @@ jobs:
           name: Scan Backend
           command: |
             cd backend
-            npm install
-            npm audit --audit-level=critical
+            sudo npm install --global npm@7
+            sudo npm audit --audit-level=critical
 
   deploy-infrastructure:
     docker:
